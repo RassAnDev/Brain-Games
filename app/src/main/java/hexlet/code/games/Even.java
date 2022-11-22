@@ -10,7 +10,6 @@ public class Even {
 
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
-
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             var generatedNumber = random.nextInt(100);
 
