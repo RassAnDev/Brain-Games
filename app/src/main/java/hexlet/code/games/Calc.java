@@ -19,7 +19,7 @@ public class Calc {
             var operatorSwitch = "";
             var result = 0;
 
-            switch(operator) {
+            switch (operator) {
                 case 0: operatorSwitch = "+";
                     result = firstNumber + secondNumber;
                     break;
