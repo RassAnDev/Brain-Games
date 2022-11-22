@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -13,11 +14,12 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
         var choice = scanner.next();
         System.out.println("Your choice: " + choice);
 
-        switch(choice) {
+        switch (choice) {
             case "0":
                 break;
             case "1":
@@ -29,6 +31,11 @@ public class App {
             case "3":
                 Calc.game();
                 break;
+            case "4":
+                Gcd.game();
+                break;
+            default:
+                System.out.println("Selected option doesn't exist :(");
         }
 
         scanner.close();
