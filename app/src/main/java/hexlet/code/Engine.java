@@ -9,8 +9,6 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
 
         var userName = "";
-        var userAnswer = "";
-        var answersCount = 0;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -20,7 +18,11 @@ public class Engine {
         System.out.println("To win, you need to give three correct answers in a row.");
         System.out.println();
 
+        var answersCount = 0;
+
         for (var i = 0; i < ROUNDS_COUNT; i++) {
+            var userAnswer = "";
+
             System.out.println("Question: " + gameData[i][0]);
             userAnswer = scanner.next();
             System.out.println("Your answer: " + userAnswer);
