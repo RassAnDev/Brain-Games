@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         var choice = scanner.next();
         System.out.println("Your choice: " + choice);
@@ -33,6 +35,9 @@ public class App {
                 break;
             case "4":
                 Gcd.game();
+                break;
+            case "5":
+                Progression.game();
                 break;
             default:
                 System.out.println("Selected option doesn't exist :(");
