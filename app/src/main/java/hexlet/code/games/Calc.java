@@ -1,38 +1,38 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.Random;
 
 public class Calc {
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 100;
+    private static final char[] OPERATORS = {'+', '-', '*'};
     private static final String RULES = "What is the result of the expression?";
 
-    public static void game() {
-        Random random = new Random();
+    private static int calculate(char operator, int firstNumber, int secondNumber) {
+        switch (operator) {
+            case '+':
+                return firstNumber + secondNumber;
+            case '-':
+                return firstNumber - secondNumber;
+            case '*':
+                return firstNumber * secondNumber;
+            default:
+                throw new RuntimeException("Unknown operator: " + operator);
+        }
+    }
 
+    public static void game() {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var firstNumber = random.nextInt(100);
-            var secondNumber = random.nextInt(100);
-            var operator = random.nextInt(3);
-            var operatorSwitch = "";
-            var result = 0;
-
-            switch (operator) {
-                case 0: operatorSwitch = "+";
-                    result = firstNumber + secondNumber;
-                    break;
-                case 1: operatorSwitch = "-";
-                    result = firstNumber - secondNumber;
-                    break;
-                case 2: operatorSwitch = "*";
-                    result = firstNumber * secondNumber;
-                    break;
-                default: operatorSwitch = "";
-            }
-
-            var expression = firstNumber + " " + operatorSwitch + " " + secondNumber;
+            var firstNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            var secondNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            var randomOperator = Utils.generateNumber(0, OPERATORS.length - 1);
+            var operator = OPERATORS[randomOperator];
+            var expression = firstNumber + " " + operator + " " + secondNumber;
+            var result = calculate(operator, firstNumber, secondNumber);
             roundsData[i][0] = expression;
             roundsData[i][1] = String.valueOf(result);
         }
