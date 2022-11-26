@@ -6,6 +6,10 @@ import hexlet.code.Utils;
 public class Progression {
     private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 100;
+    private static final int MIN_STEP = 1;
+    private static final int MAX_STEP = 10;
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 10;
     private static final String RULES = "What number is missing in the progression?";
 
     private static String[] makeProgression(int start, int step, int length) {
@@ -23,8 +27,8 @@ public class Progression {
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
             var startProgression = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var stepProgression = Utils.generateNumber(1, 10);
-            var lengthProgression = Utils.generateNumber(5, 10);
+            var stepProgression = Utils.generateNumber(MIN_STEP, MAX_STEP);
+            var lengthProgression = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);
             var randomElement = Utils.generateNumber(MIN_VALUE, lengthProgression - 1);
             var hiddenElement = "";
             String[] progression = makeProgression(startProgression, stepProgression, lengthProgression);
