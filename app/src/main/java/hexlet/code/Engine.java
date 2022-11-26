@@ -15,33 +15,31 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
-        System.out.println("To win, you need to give three correct answers in a row.");
         System.out.println();
 
         var answersCount = 0;
 
-        for (var i = 0; i < ROUNDS_COUNT; i++) {
+        for (var roundData : gameData) {
             var userAnswer = "";
 
-            System.out.println("Question: " + gameData[i][0]);
+            System.out.println("Question: " + roundData[0]);
             userAnswer = scanner.next();
             System.out.println("Your answer: " + userAnswer);
 
-            if (userAnswer.equalsIgnoreCase(gameData[i][1])) {
+            if (userAnswer.equalsIgnoreCase(roundData[1])) {
                 System.out.println("Correct!");
                 answersCount++;
                 System.out.println("Correct answers: " + answersCount);
                 System.out.println();
-                if (answersCount == 3) {
-                    System.out.println("Congratulations, " + userName + "!");
-                }
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + gameData[i][1] + "'.");
+                        + "'" + roundData[1] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
         }
+
+        System.out.println("Congratulations, " + userName + "!");
 
         scanner.close();
     }
