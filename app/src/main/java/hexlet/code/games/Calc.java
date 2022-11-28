@@ -27,12 +27,12 @@ public class Calc {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var firstNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var secondNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var randomOperator = Utils.generateNumber(0, OPERATORS.length - 1);
-            var operator = OPERATORS[randomOperator];
-            var expression = firstNumber + " " + operator + " " + secondNumber;
-            var result = calculate(operator, firstNumber, secondNumber);
+            int firstNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int secondNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int randomOperator = Utils.generateNumber(0, OPERATORS.length - 1);
+            char operator = OPERATORS[randomOperator];
+            String expression = firstNumber + " " + operator + " " + secondNumber;
+            int result = calculate(operator, firstNumber, secondNumber);
             roundsData[i][0] = expression;
             roundsData[i][1] = String.valueOf(result);
         }
