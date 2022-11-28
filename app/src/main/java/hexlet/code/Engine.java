@@ -8,7 +8,7 @@ public class Engine {
     public static void runGame(String rules, String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
 
-        var userName = "";
+        String userName = "";
 
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -17,10 +17,10 @@ public class Engine {
         System.out.println(rules);
         System.out.println();
 
-        var answersCount = 0;
+        int answersCount = 0;
 
         for (var roundData : gameData) {
-            var userAnswer = "";
+            String userAnswer = "";
 
             System.out.println("Question: " + roundData[0]);
             userAnswer = scanner.next();
