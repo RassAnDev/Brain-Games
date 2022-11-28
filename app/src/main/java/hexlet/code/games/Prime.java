@@ -10,10 +10,10 @@ public class Prime {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     private static boolean isPrime(int number) {
-        if (number < 1) {
+        if (number < 2) {
             return false;
         }
-        for (var i = 2; i * i <= number; i++) {
+        for (var i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }
@@ -24,7 +24,7 @@ public class Prime {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var generatedNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int generatedNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
             roundsData[i][0] = String.valueOf(generatedNumber);
             roundsData[i][1] = isPrime(generatedNumber) ? "yes" : "no";
         }
