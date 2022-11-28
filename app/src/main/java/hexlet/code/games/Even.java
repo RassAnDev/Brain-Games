@@ -16,7 +16,7 @@ public class Even {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var generatedNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int generatedNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
 
             roundsData[i][0] = String.valueOf(generatedNumber);
             roundsData[i][1] = isEven(generatedNumber) ? "yes" : "no";
