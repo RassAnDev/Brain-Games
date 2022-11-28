@@ -26,19 +26,15 @@ public class Progression {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var startProgression = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var stepProgression = Utils.generateNumber(MIN_STEP, MAX_STEP);
-            var lengthProgression = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);
-            var randomElement = Utils.generateNumber(MIN_VALUE, lengthProgression - 1);
-            var hiddenElement = "";
+            int startProgression = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int stepProgression = Utils.generateNumber(MIN_STEP, MAX_STEP);
+            int lengthProgression = Utils.generateNumber(MIN_LENGTH, MAX_LENGTH);
+            int randomElement = Utils.generateNumber(MIN_VALUE, lengthProgression - 1);
+            String hiddenElement = "";
             String[] progression = makeProgression(startProgression, stepProgression, lengthProgression);
 
-            for (var j = 0; j < progression.length; j++) {
-                if (j == randomElement) {
-                    hiddenElement = progression[j];
-                    progression[j] = "..";
-                }
-            }
+            hiddenElement = progression[randomElement];
+            progression[randomElement] = "..";
 
             roundsData[i][0] = String.join(" ", progression);
             roundsData[i][1] = hiddenElement;
