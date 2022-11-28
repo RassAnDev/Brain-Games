@@ -19,9 +19,9 @@ public class Gcd {
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var firstGameNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var secondGameNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
-            var expression = firstGameNumber + " " + secondGameNumber;
+            int firstGameNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            int secondGameNumber = Utils.generateNumber(MIN_VALUE, MAX_VALUE);
+            String expression = firstGameNumber + " " + secondGameNumber;
             roundsData[i][0] = expression;
             roundsData[i][1] = String.valueOf(calculateGcd(firstGameNumber, secondGameNumber));
         }
