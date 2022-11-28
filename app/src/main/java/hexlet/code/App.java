@@ -20,7 +20,8 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-        var choice = scanner.next();
+
+        String choice = scanner.next();
         System.out.println("Your choice: " + choice);
 
         switch (choice) {
